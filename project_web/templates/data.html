@@ -1,0 +1,26 @@
+<form method=post action="">{% csrf_token %}
+<table>
+  {% for field in form %} 
+    <tr>
+    <td>{{ field.name }}</td> 
+    <td>{{ field }}</td>
+    <td>{{ field.label }}</td>
+    <td>{{ field.errors }}</td>
+    <td></td>
+    </tr>
+  {% endfor %} 
+    <p><img src="/static/images/logo.jpg" width="350" height="180"</p>
+</table>
+<p><input type=submit value=Compute></form></p>
+
+
+<p>
+{% if result != None %}
+{% load static %}
+<img src="{% get_static_prefix %}{{ result }}" width=500>
+<!--<p><img src="/static/images/111.jpeg" width="250" height="180"</p>--!>
+{% endif %}
+</p>
+
+
+	{{List|safe}} 
